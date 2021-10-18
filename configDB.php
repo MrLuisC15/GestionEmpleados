@@ -1,3 +1,7 @@
 <?php
-    $conexion=mysqli_connect();
+    define("SERVIDOR", "");
+    define("USUARIO", "");
+    define("CONTRASENA", "");
+    define("BASEDATOS", "");
+   
 ?>
