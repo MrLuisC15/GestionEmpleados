@@ -26,9 +26,8 @@
 
                 $conexion =  mysqli_connect($configbd->SERVIDOR,  $configbd->USUARIO,  $configbd->CONTRASENA, $configbd->BASEDATOS);
        
-                $consulta = 'select * from empleados;';
        
-                $resultado = mysqli_query($conexion, $consulta)
+                $resultado = mysqli_query($conexion, $consulta->SELECT)
 
                
                 $fila = mysqli_fetch_array($resultado, MYSQLI_NUM);
