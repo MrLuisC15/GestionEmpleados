@@ -23,16 +23,14 @@
                 </td>
             </tr>
             <?php
-                $servidorbd = '127.0.0.1';
-                $usuario = 'root';
-                $contraseña = '';
-                $basedatos = 'bd_empleados';
-                $conexion =  mysqli_connect($servidorbd, $usuario, $contraseña, $basedatos);
+
+                $conexion =  mysqli_connect($configbd->SERVIDOR,  $configbd->USUARIO,  $configbd->CONTRASENA, $configbd->BASEDATOS);
        
                 $consulta = 'select * from empleados;';
        
                 $resultado = mysqli_query($conexion, $consulta)
 
+               
                 $fila = mysqli_fetch_array($resultado, MYSQLI_NUM);
                 for($i=0;$i<3;$i++){
                     echo '<tr>';

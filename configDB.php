@@ -1,7 +1,9 @@
 <?php
-    define("SERVIDOR", "");
-    define("USUARIO", "");
-    define("CONTRASENA", "");
-    define("BASEDATOS", "");
-   
+    class configbd{
+        define("SERVIDOR", "127.0.0.1");
+        define("USUARIO", "root");
+        define("CONTRASENA", "");
+        define("BASEDATOS", "bd_empleados");
+    }
+
 ?>
