@@ -1,4 +1,11 @@
 <!DOCTYPE html> <!-- Luis C Marzal -->
+<?php
+    define("SERVIDOR", "127.0.0.1");
+    define("USUARIO", "root");
+    define("CONTRASENA", "");
+    define("BASEDATOS", "db_empleados");
+
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -6,37 +13,44 @@
         <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
-        <h1>Empleados</h1>
+        <header>
+            <h1>Gestión de Empleados</h1>
+        </header>
+        <nav>
+            <a href=anadir.php>Añadir</a>
+            <a href=#>Visualizar</a>
+        </nav>
         <table>
             <tr>
-                <td>
+                <th>
                     DNI
-                </td>
-                <td>
+                </th>
+                <th>
                     Nombre
-                </td>
-                <td>
+                </th>
+                <th>
                     Editar
-                </td>
-                <td>
+                </th>
+                <th>
                     Eliminar
-                </td>
+                </th>
             </tr>
             <?php
+                
+                
 
-                $conexion =  mysqli_connect($configbd->SERVIDOR,  $configbd->USUARIO,  $configbd->CONTRASENA, $configbd->BASEDATOS);
+                $conexion =  mysqli_connect(SERVIDOR,  USUARIO,  CONTRASENA, BASEDATOS);
        
-       
-                $resultado = mysqli_query($conexion, $consulta->SELECT)
-
+                $resultado = mysqli_query($conexion, 'select * from empleados;');
                
                 $fila = mysqli_fetch_array($resultado, MYSQLI_NUM);
-                for($i=0;$i<3;$i++){
+
+                for($i=0;$i<mysqli_fetch_lengths($resultado);$i++){
                     echo '<tr>';
                     echo '<td>'.$fila[1].'</td>';
                     echo '<td>'.$fila[2].'</td>';
-                    echo '<td><a href="editar.php?'.$fila[0].'">Edita</a></td>';
-                    echo '<td><a href="borrar.php?'.$fila[0].'">Borra</a></td>';
+                    echo '<td><a href="editar.php?id='.$fila[0].'"><img src=img/editar.png /></a></td>';
+                    echo '<td><a href="borrar.php?id='.$fila[0].'"><img src=img/borrar.png /></a></td>';
                     echo '</tr>';
                     $fila =mysqli_fetch_array($resultado, MYSQLI_NUM);
                 }
