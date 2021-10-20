@@ -35,8 +35,8 @@
                     echo '<tr>';
                     echo '<td>'.$fila[1].'</td>';
                     echo '<td>'.$fila[2].'</td>';
-                    echo '<td><button>Edita</button></td>';
-                    echo '<td><button>Borra</button></td>';
+                    echo '<td><a href="editar.php?'.$fila[0].'">Edita</a></td>';
+                    echo '<td><a href="borrar.php?'.$fila[0].'">Borra</a></td>';
                     echo '</tr>';
                     $fila =mysqli_fetch_array($resultado, MYSQLI_NUM);
                 }
