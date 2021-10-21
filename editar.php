@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php
-    define("SERVIDOR", "127.0.0.1");
-    define("USUARIO", "root");
-    define("CONTRASENA", "");
-    define("BASEDATOS", "db_empleados");
+    require('configdb.php')
 ?>
 <html lang="en">
 <head>
@@ -26,7 +23,7 @@
         $resultado = mysqli_query($conexion, 'select * from empleados where IdEmpleado=\''.$_GET['id'].'\';');
         $fila = mysqli_fetch_array($resultado, MYSQLI_NUM);
 
-        echo '<form>';
+        echo '<form action=update.php method=POST>';
         echo '<label>DNI</label><br />';
         echo '<input type=text required placeholder='.$fila[1].'><br /><br />';
         echo '<label>Nombre</label><br />';
