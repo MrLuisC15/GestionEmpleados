@@ -13,8 +13,8 @@
         <h1>Gestión de Empleados</h1>
     </header>
     <nav>
-        <a href=anadir.php>Añadir</a>
-        <a href=#>Visualizar</a>
+        <a href=#>Añadir</a>
+        <a href=index.php>Visualizar</a>
     </nav>
     <?php
         
