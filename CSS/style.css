@@ -4,7 +4,7 @@
 
 body{
     background-color: rgb(127, 221, 255);
-    margin: 0;
+    margin: 0 8% 0 8%;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,6 +31,24 @@ nav a{
     margin: 10px 20px;
 }
 
+aside{
+    background-color: salmon;
+    width: 27%;/*330px;*/
+    min-height: 500px;
+    margin-left: 1%;
+    float: left;
+    padding-left: 2%;
+}
+
+article{
+    background-color: blue;
+    width: 65%;/*820px;*/
+    min-height: 500px;
+    margin-right: 1%;
+    float: left;
+    padding: 0 2% 0 2% ;
+}
+
 table{
     margin: 30px 15%;
     width: 70%;
@@ -46,4 +64,11 @@ td, th {
 th {
     background-color: teal;
     color:white;
+}
+
+footer{
+    background-color: yellowgreen;
+    height: auto;
+    clear:left;
+    min-height: 40px;
 }
